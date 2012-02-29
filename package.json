@@ -1,8 +1,8 @@
 {
     "name": "teacher"
-  , "version": "0.0.0"
-  , "description": "Description"
-  , "keywords": ["keyword"]
+  , "version": "0.0.1"
+  , "description": "Spell checking for Node.js"
+  , "keywords": ["spell check", "spell checking"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {
 			"request": "2.9.152"
