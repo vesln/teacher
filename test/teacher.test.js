@@ -26,7 +26,7 @@ describe('Teacher', function() {
 
     describe('with ignore types', function() {
       it('should overwrite them both', function() {
-        var teacher = new Teacher(['foo']);
+				var teacher = new Teacher('en', ['foo']);
         teacher.ignore().should.eql(['foo']);
       });
     });

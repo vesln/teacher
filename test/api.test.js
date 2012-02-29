@@ -30,18 +30,6 @@ describe('Api', function() {
         'es': 'http://es.service.afterthedeadline.com'
       });
     });
-
-    it('should have default language', function() {
-      var api = new Api;
-      api.lang().should.eql('en');
-    });
-  });
-
-  describe('with language param', function() {
-    it('should overwite the default language', function() {
-      var api = new Api('fr');
-      api.lang().should.eql('fr');
-    });
   });
 
   describe('url', function() {
@@ -67,16 +55,18 @@ describe('Api', function() {
         done();
       });
 
-      api.get(data, 'checkDocument');
+      api.get(data, 'checkDocument', 'en');
     });
 
     describe('and returned', function() {
       it('should contain errors if any', function(done) {
         var api = new Api;
+
         api.stub('request').and.replace(function(options, cb) {
           cb(new Error('test'));
         });
-        api.get('foo', 'checkDocument', function(err) {
+
+        api.get('foo', 'checkDocument', 'en', function(err) {
           err.should.be.ok;
           done();
         });
@@ -90,7 +80,7 @@ describe('Api', function() {
           cb(null, null, res);
         });
 
-        api.get('foo', 'checkDocument', function(err, data) {
+        api.get('foo', 'checkDocument', 'en', function(err, data) {
           data.should.be.a('object');
           data.should.have.property('error');
           done();
