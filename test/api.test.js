@@ -35,24 +35,12 @@ describe('Api', function() {
       var api = new Api;
       api.lang().should.eql('en');
     });
-
-    it('should setup ignored types', function() {
-      var api = new Api;
-      api.ignore().should.eql(['bias language', 'cliches', 'complex expression', 'diacritical marks', 'double negatives', 'hidden verbs', 'jargon language', 'passive voice', 'phrases to avoid', 'redundant expression']);
-    });
   });
 
   describe('with language param', function() {
     it('should overwite the default language', function() {
       var api = new Api('fr');
       api.lang().should.eql('fr');
-    });
-
-    describe('and ignore types', function() {
-      it('should overwrite them both', function() {
-        var api = new Api('fr', ['foo']);
-        api.ignore().should.eql(['foo']);
-      });
     });
   });
 
@@ -103,8 +91,8 @@ describe('Api', function() {
         });
 
         api.get('foo', 'checkDocument', function(err, data) {
-          data.should.have.property('error');
           data.should.be.a('object');
+          data.should.have.property('error');
           done();
         });
       });
