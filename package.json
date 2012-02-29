@@ -1,0 +1,28 @@
+{
+    "name": "teacher"
+  , "version": "0.0.0"
+  , "description": "Description"
+  , "keywords": ["keyword"]
+  , "author": "Veselin Todorov <hi@vesln.com>"
+  , "dependencies": {
+			"request": "2.9.152"
+		,	"xml2js": "0.1.13"
+  }
+  , "devDependencies": {
+      "mocha": "0.x.x"
+    , "chai": "*"
+    , "jack": "*"
+  }
+  , "repository" : {
+      "type" : "git"
+    , "url" : "http://github.com/vesln/teacher.git"
+  }
+  , "homepage": "http://github.com/vesln/teacher"
+  , "scripts": {
+      "test": "make test"
+  }
+  , "main": "./lib/teacher.js"
+  , "engines": { 
+      "node": ">= 0.6.0"
+  }
+}
