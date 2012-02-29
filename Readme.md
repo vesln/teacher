@@ -22,7 +22,7 @@ Supported languages:
 /**
  * Dependencies.
  */
-var teacher = require('../lib/');
+var teacher = require('teacher');
 
 /**
  * Simple.
