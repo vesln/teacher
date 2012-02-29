@@ -11,7 +11,6 @@
 var should = require('chai').should();
 var jack = require('jack');
 
-
 /**
  * Context
  */
@@ -36,5 +35,64 @@ describe('Teacher', function() {
 				teacher.language().should.eql('fr');
       });
     });
+	});
+
+	describe('when a check request is made', function() {
+		it('should call the api with correct params', function(done) {
+			var teacher = new Teacher;
+
+			teacher.api.mock('get').and.replace(function(text, action, lang) {
+				text.should.eql('foo');
+				action.should.eql('checkDocument');
+				lang.should.eql('en');
+				done();
+			});
+
+			teacher.check('foo');
+		});
+
+		it('should return errors if any', function(done) {
+			var teacher = new Teacher;
+
+			teacher.api.mock('get').and.replace(function(text, action, lang, fn) {
+				fn(new Error('test'));
+			});
+
+			teacher.check('foo', function(err) {
+				err.should.be.ok;
+				done();
+			});
+		});
+
+		it('should filter ignored error types', function(done) {
+			var teacher = new Teacher;
+
+			teacher.api.mock('get').and.replace(function(text, action, lang, fn) {
+				var ret = { error: 
+				 [ { string: 'Worng',
+						 description: 'Spelling',
+						 precontext: {},
+						 suggestions: {},
+						 type: 'spelling' },
+					 { string: 'owrd',
+						 description: 'Spelling',
+						 precontext: 'Worng',
+						 suggestions: {},
+						 type: 'bias language' } ] };
+				fn(null, ret);
+			});
+
+			teacher.check('Worng owrd', function(err, data) {
+				data.should.eql([
+					{ string: 'Worng',
+						 description: 'Spelling',
+						 precontext: {},
+						 suggestions: {},
+						 type: 'spelling'
+					}
+				]);
+				done();
+			});
+		});
 	});
 });
