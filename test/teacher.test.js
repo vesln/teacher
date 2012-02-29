@@ -24,10 +24,16 @@ describe('Teacher', function() {
       teacher.ignore().should.eql(['bias language', 'cliches', 'complex expression', 'diacritical marks', 'double negatives', 'hidden verbs', 'jargon language', 'passive voice', 'phrases to avoid', 'redundant expression']);
     });
 
-    describe('with ignore types', function() {
+		it('should setup the language', function() {
+      var teacher = new Teacher;
+			teacher.language().should.eql('en');
+		});
+
+    describe('with supplied params', function() {
       it('should overwrite them both', function() {
-				var teacher = new Teacher('en', ['foo']);
+				var teacher = new Teacher('fr', ['foo']);
         teacher.ignore().should.eql(['foo']);
+				teacher.language().should.eql('fr');
       });
     });
 	});
