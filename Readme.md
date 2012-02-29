@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/vesln/teacher.png)](http://travis-ci.org/vesln/teacher)
+
 # teacher
 
 ## Description
