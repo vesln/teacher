@@ -10,7 +10,7 @@
   }
   , "devDependencies": {
       "mocha": "0.x.x"
-    , "chai": "*"
+    , "chai": "0.4.2"
     , "jack": "*"
   }
   , "repository" : {
