@@ -1,4 +1,4 @@
-[![Build Status](https://secure.travis-ci.org/vesln/teacher.png)](http://travis-ci.org/vesln/{project})
+[![Build Status](https://secure.travis-ci.org/vesln/teacher.png)](http://travis-ci.org/vesln/teacher)
 
 # teacher
 
@@ -9,7 +9,7 @@
 ## Requirements
 
 - NPM (http://npmjs.org/)
-- Node.js 0.6 (http://nodejs.org/)
+- Node.js (http://nodejs.org/)
 
 ## Install
 
