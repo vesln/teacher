@@ -11,7 +11,7 @@
   , "devDependencies": {
       "mocha": "0.x.x"
     , "chai": "0.4.2"
-    , "jack": "*"
+    , "jack": "0.x.x"
   }
   , "repository" : {
       "type" : "git"
