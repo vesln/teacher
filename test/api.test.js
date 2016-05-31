@@ -23,11 +23,11 @@ describe('Api', function() {
       var api = new Api;
 
       api.url().should.eql({
-        'en': 'http://service.afterthedeadline.com',
-        'fr': 'http://fr.service.afterthedeadline.com',
-        'de': 'http://de.service.afterthedeadline.com',
-        'pt': 'http://pt.service.afterthedeadline.com',
-        'es': 'http://es.service.afterthedeadline.com'
+        'en': 'https://en.service.afterthedeadline.com',
+        'fr': 'https://fr.service.afterthedeadline.com',
+        'de': 'https://de.service.afterthedeadline.com',
+        'pt': 'https://pt.service.afterthedeadline.com',
+        'es': 'https://es.service.afterthedeadline.com'
       });
     });
   });
@@ -35,7 +35,7 @@ describe('Api', function() {
   describe('url', function() {
     it('should return an url address for supplied language', function() {
       var api = new Api;
-      api.url('fr').should.eql('http://fr.service.afterthedeadline.com');
+      api.url('fr').should.eql('https://fr.service.afterthedeadline.com');
     });
   });
 
@@ -48,7 +48,7 @@ describe('Api', function() {
       api.mock('request').and.replace(function(options, cb) {
         options.should.eql({
           method: 'POST',
-          url: 'http://service.afterthedeadline.com/checkDocument',
+          url: 'https://en.service.afterthedeadline.com/checkDocument',
           form: {data: data, key: key}
         });
         api.request.reset()
