@@ -1,28 +1,31 @@
 {
-    "name": "teacher"
-  , "version": "0.0.1"
-  , "description": "Spell checking for Node.js"
-  , "keywords": ["spell check", "spell checking"]
-  , "author": "Veselin Todorov <hi@vesln.com>"
-  , "dependencies": {
-			"request": "2.9.152"
-		,	"xml2js": "0.1.13"
-  }
-  , "devDependencies": {
-      "mocha": "0.x.x"
-    , "chai": "0.4.x"
-    , "jack": "0.x.x"
-  }
-  , "repository" : {
-      "type" : "git"
-    , "url" : "http://github.com/vesln/teacher.git"
-  }
-  , "homepage": "http://github.com/vesln/teacher"
-  , "scripts": {
-      "test": "make test"
-  }
-  , "main": "./lib/index.js"
-  , "engines": { 
-      "node": ">= 0.6.0"
+  "name": "teacher",
+  "version": "0.1.0",
+  "description": "Spell checking for Node.js",
+  "keywords": [
+    "spell check",
+    "spell checking"
+  ],
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "dependencies": {
+    "request": "2.9.152",
+    "xml2js": "0.1.13"
+  },
+  "devDependencies": {
+    "mocha": "0.x.x",
+    "chai": "0.4.x",
+    "jack": "0.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/vesln/teacher.git"
+  },
+  "homepage": "http://github.com/vesln/teacher",
+  "scripts": {
+    "test": "make test"
+  },
+  "main": "./lib/index.js",
+  "engines": {
+    "node": ">= 0.6.0"
   }
 }
