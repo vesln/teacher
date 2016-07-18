@@ -8,7 +8,7 @@
   ],
   "author": "Veselin Todorov <hi@vesln.com>",
   "dependencies": {
-    "request": "2.9.152",
+    "request": "2.73.0",
     "xml2js": "0.1.13"
   },
   "devDependencies": {
