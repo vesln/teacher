@@ -26,7 +26,6 @@
   },
   "main": "./lib/index.js",
   "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.4.3"
+    "node": ">= 0.6.0"
   }
 }
