@@ -48,7 +48,7 @@ describe('Api', function() {
       api.mock('request').and.replace(function(options, cb) {
         options.should.eql({
           method: 'POST',
-          url: 'https://en.service.afterthedeadline.com/checkDocument',
+          url: 'https://www.polishmywriting.com/proxy.php?url=/checkDocument',
           form: {data: data, key: key}
         });
         api.request.reset()
