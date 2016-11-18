@@ -23,7 +23,7 @@ describe('Api', function() {
       var api = new Api;
 
       api.url().should.eql({
-        'en': 'https://en.service.afterthedeadline.com',
+        'en': 'https://www.polishmywriting.com/proxy.php?url=',
         'fr': 'https://fr.service.afterthedeadline.com',
         'de': 'https://de.service.afterthedeadline.com',
         'pt': 'https://pt.service.afterthedeadline.com',
